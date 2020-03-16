@@ -5,7 +5,7 @@ struct LoginViewModelFactory {
     // MARK: - Functions
     
     static func create() -> LoginViewModel {
-        return LoginViewModel(backgroundColor: UIColor.hex(0xF0F2F6),
+        return LoginViewModel(backgroundColor: UIColor.primaryBackgroundColor,
                               buttonModel: createButtonModel(),
                               contentStackModel: createContentStackModel(),
                               emailTextEntryModel: createEmailTextEntryModel(),
@@ -20,13 +20,13 @@ struct LoginViewModelFactory {
     private static func createButtonModel() -> LoginButtonModel {
         let font: FontModel = .init(pointSize: 16, weight: .semibold)
         
-        return LoginButtonModel(backgroundColor: UIColor.hex(0x0000BF),
+        return LoginButtonModel(backgroundColor: UIColor.primaryButtonBackgroundColor,
                                 cornerRadius: 4,
-                                disabledBackgroundColor: UIColor.hex(0xCCCCCC),
+                                disabledBackgroundColor: UIColor.tertiaryButtonBackgroundColor,
                                 height: 44,
-                                highlightedBackgroundColor: UIColor.hex(0x3344FF),
+                                highlightedBackgroundColor: UIColor.secondaryButtonBackgroundColor,
                                 title: NSLocalizedString("LOGIN", comment: "Login Form - CTA Title Text"),
-                                titleColor: UIColor.hex(0xFFFFFF),
+                                titleColor: UIColor.primaryButtonTextColor,
                                 titleFont: font)
     }
     
@@ -74,24 +74,22 @@ struct LoginViewModelFactory {
     }
     
     private static func createTextEntryViewModel(titleText: String, placeholderText: String, secureTextFieldTextEntry: Bool = false) -> LoginTextEntryViewModel {
-        let shadowViewModel: ShadowViewModel = .init(color: UIColor.black,
+        let shadowViewModel: ShadowViewModel = .init(color: UIColor.primaryShadowColor,
                                                      offset: CGSize(width: 1, height: 1),
                                                      opacity: 0.1,
                                                      radius: 1)
         
         let textFieldFont: FontModel = .init(pointSize: 16, weight: .regular)
         
-        let textFieldModel: LoginTextEntryTextFieldModel = .init(backgroundColor: UIColor.hex(0xFFFFFF),
-                                                                 borderColor: .clear,
-                                                                 borderWidth: 0,
+        let textFieldModel: LoginTextEntryTextFieldModel = .init(backgroundColor: UIColor.secondaryBackgroundColor,
                                                                  cornerRadius: 4,
                                                                  font: textFieldFont,
                                                                  padding: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10),
                                                                  placeholderText: placeholderText,
-                                                                 placeholderTextColor: UIColor.gray,
+                                                                 placeholderTextColor: UIColor.secondaryTextColor,
                                                                  isSecureTextEntry: secureTextFieldTextEntry,
                                                                  shadowModel: shadowViewModel,
-                                                                 textColor: .black)
+                                                                 textColor: UIColor.primaryTextColor)
         
         let titleFont: FontModel = .init(pointSize: 14, weight: .medium)
         
@@ -99,7 +97,7 @@ struct LoginViewModelFactory {
                                                numberOfLines: 1,
                                                text: titleText,
                                                textAlignment: .left,
-                                               textColor: .black)
+                                               textColor: UIColor.primaryTextColor)
         
         let stackModel: LoginStackModel = .init(alignment: .leading,
                                                 axis: .vertical,

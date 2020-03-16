@@ -13,7 +13,7 @@ struct ErrorAlertLayoutAnimation: ViewModifier {
             .frame(width: width,
                    height: ErrorAlert.getHeight(text: message, width: width))
             .offset(y: showError ? 0 : -ErrorAlert.getHeight(text: message, width: width))
-            .animation(.easeIn(duration: 0.2))
+            .animation(.easeIn(duration: ErrorAlertView.animationDuration))
     }
     
 }

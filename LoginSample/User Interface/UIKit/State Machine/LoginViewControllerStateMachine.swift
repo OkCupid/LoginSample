@@ -34,7 +34,7 @@ final class LoginViewControllerStateMachine: NSObject {
             let bottomConstraint = controller?.errorAlertViewBottomConstraint
             else { return }
         
-        UIView.animate(withDuration: 0.2) {
+        UIView.animate(withDuration: ErrorAlertView.animationDuration) {
             NSLayoutConstraint.deactivate([bottomConstraint])
             NSLayoutConstraint.activate([topConstraint])
             self.controller?.view.layoutIfNeeded()
@@ -76,7 +76,7 @@ final class LoginViewControllerStateMachine: NSObject {
             let bottomConstraint = controller?.errorAlertViewBottomConstraint
             else { return }
         
-        UIView.animate(withDuration: 0.2, animations: {
+        UIView.animate(withDuration: ErrorAlertView.animationDuration, animations: {
             NSLayoutConstraint.deactivate([topConstraint])
             NSLayoutConstraint.activate([bottomConstraint])
             self.controller?.view.layoutIfNeeded()

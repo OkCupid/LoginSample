@@ -24,7 +24,7 @@
 		5D1780942416DF3300E5AB13 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1780932416DF3300E5AB13 /* LoginView.swift */; };
 		5D1780962416DF7400E5AB13 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1780952416DF7400E5AB13 /* LoginViewController.swift */; };
 		5D1781372417CE1A00E5AB13 /* LoginTextEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1781362417CE1A00E5AB13 /* LoginTextEntryView.swift */; };
-		5D1781B72417DF9A00E5AB13 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1781B62417DF9A00E5AB13 /* UIColor+Extension.swift */; };
+		5D1781B72417DF9A00E5AB13 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1781B62417DF9A00E5AB13 /* UIColor+Extensions.swift */; };
 		5D1781B92417E67700E5AB13 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1781B82417E67700E5AB13 /* UIImage+Extension.swift */; };
 		5D1781BD2418068D00E5AB13 /* PaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1781BC2418068D00E5AB13 /* PaddedTextField.swift */; };
 		5D1781C02418302D00E5AB13 /* LoginTextEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1781BF2418302D00E5AB13 /* LoginTextEntryViewModel.swift */; };
@@ -89,7 +89,7 @@
 		5D1780932416DF3300E5AB13 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		5D1780952416DF7400E5AB13 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5D1781362417CE1A00E5AB13 /* LoginTextEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextEntryView.swift; sourceTree = "<group>"; };
-		5D1781B62417DF9A00E5AB13 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		5D1781B62417DF9A00E5AB13 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		5D1781B82417E67700E5AB13 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		5D1781BC2418068D00E5AB13 /* PaddedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedTextField.swift; sourceTree = "<group>"; };
 		5D1781BF2418302D00E5AB13 /* LoginTextEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextEntryViewModel.swift; sourceTree = "<group>"; };
@@ -269,7 +269,7 @@
 		5D17808F2416DE4200E5AB13 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				5D1781B62417DF9A00E5AB13 /* UIColor+Extension.swift */,
+				5D1781B62417DF9A00E5AB13 /* UIColor+Extensions.swift */,
 				5D1781B82417E67700E5AB13 /* UIImage+Extension.swift */,
 				5D1780902416DE7500E5AB13 /* UIViewController+Extensions.swift */,
 			);
@@ -576,7 +576,7 @@
 				5D82884F241D7F0500875FC9 /* UIViewContentModeConvertible.swift in Sources */,
 				5D1781B92417E67700E5AB13 /* UIImage+Extension.swift in Sources */,
 				5D1781CA2418337400E5AB13 /* LoginStackModel.swift in Sources */,
-				5D1781B72417DF9A00E5AB13 /* UIColor+Extension.swift in Sources */,
+				5D1781B72417DF9A00E5AB13 /* UIColor+Extensions.swift in Sources */,
 				5D1781D22418337B00E5AB13 /* LoginButtonModel.swift in Sources */,
 				5D82884D241D674E00875FC9 /* LoginButtonStyle.swift in Sources */,
 				5D1781CC2418337600E5AB13 /* LoginImageModel.swift in Sources */,

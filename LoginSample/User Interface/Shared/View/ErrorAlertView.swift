@@ -4,6 +4,8 @@ final class ErrorAlertView: UIView {
     
     // MARK: - Properties
     
+    static let animationDuration: Double = 0.2
+    
     private static let font: UIFont = .systemFont(ofSize: 12, weight: .regular)
     private static let lineBreakMode: NSLineBreakMode = .byWordWrapping
     private static let numberOfLines: Int = 0
@@ -16,7 +18,7 @@ final class ErrorAlertView: UIView {
         label.lineBreakMode = Self.lineBreakMode
         label.numberOfLines = Self.numberOfLines
         label.textAlignment = .center
-        label.textColor = .white
+        label.textColor = UIColor.primaryButtonTextColor
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -36,7 +38,6 @@ final class ErrorAlertView: UIView {
         configureLabelConstraints(width: width)
         self.message = message
         label.text = message
-        
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -63,7 +64,7 @@ final class ErrorAlertView: UIView {
     }
     
     private func configureView() {
-        backgroundColor = .red
+        backgroundColor = UIColor.primaryErrorBackgroundColor
         addSubview(label)
     }
     
