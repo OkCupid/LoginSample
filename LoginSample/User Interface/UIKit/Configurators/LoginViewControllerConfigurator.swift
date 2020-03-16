@@ -24,6 +24,36 @@ struct LoginViewControllerConfigurator {
         configureActionButtonConstraint(for: controller, viewModel: viewModel)
     }
     
+    func configureErrorAlertView(for controller: LoginViewController, message: String) {
+        let view: ErrorAlertView = .init(message: message, width: controller.view.frame.width)
+        controller.errorAlertView = view
+        controller.errorAlertView?.translatesAutoresizingMaskIntoConstraints = false
+        controller.errorAlertView?.isHidden = true
+        
+        controller.view.addSubview(view)
+        
+        let height: CGFloat = ErrorAlertView.getHeight(text: message, width: controller.view.frame.width)
+        
+        let widthConstraint: NSLayoutConstraint = view.widthAnchor.constraint(equalToConstant: controller.view.frame.width)
+        let heightConstraint: NSLayoutConstraint = view.heightAnchor.constraint(equalToConstant: height)
+        let centerXConstraint: NSLayoutConstraint = view.centerXAnchor.constraint(equalTo: controller.view.centerXAnchor)
+        let topConstraint: NSLayoutConstraint = view.topAnchor.constraint(equalTo: controller.view.topAnchor)
+        let bottomConstraint: NSLayoutConstraint = view.bottomAnchor.constraint(equalTo: controller.view.topAnchor)
+        
+        controller.errorAlertViewTopConstraint = topConstraint
+        controller.errorAlertViewBottomConstraint = bottomConstraint
+        
+        NSLayoutConstraint.activate([
+            widthConstraint,
+            heightConstraint,
+            centerXConstraint,
+            bottomConstraint
+        ])
+        
+        controller.view.layoutIfNeeded()
+        controller.errorAlertView?.isHidden = false
+    }
+    
     // MARK: Private
     
     private func configureView(for controller: LoginViewController, viewModel: LoginViewModel) {

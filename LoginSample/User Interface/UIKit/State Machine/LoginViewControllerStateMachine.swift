@@ -27,6 +27,20 @@ final class LoginViewControllerStateMachine: NSObject {
         controller?.actionButton.isEnabled = shouldEnable ? true : false
     }
     
+    func showErrorAlertView() {
+        guard
+            let _ = controller?.errorAlertView,
+            let topConstraint = controller?.errorAlertViewTopConstraint,
+            let bottomConstraint = controller?.errorAlertViewBottomConstraint
+            else { return }
+        
+        UIView.animate(withDuration: 0.2) {
+            NSLayoutConstraint.deactivate([bottomConstraint])
+            NSLayoutConstraint.activate([topConstraint])
+            self.controller?.view.layoutIfNeeded()
+        }
+    }
+    
     // MARK: Private
     
     private func assignTextFieldDelegates() {
@@ -52,6 +66,26 @@ final class LoginViewControllerStateMachine: NSObject {
     
     @objc private func textFieldDidChange() {
         updateActionButtonState()
+        removeErrorAlertViewIfNeeded()
+    }
+    
+    private func removeErrorAlertViewIfNeeded() {
+        guard
+            let view = controller?.errorAlertView,
+            let topConstraint = controller?.errorAlertViewTopConstraint,
+            let bottomConstraint = controller?.errorAlertViewBottomConstraint
+            else { return }
+        
+        UIView.animate(withDuration: 0.2, animations: {
+            NSLayoutConstraint.deactivate([topConstraint])
+            NSLayoutConstraint.activate([bottomConstraint])
+            self.controller?.view.layoutIfNeeded()
+        }) { _ in
+            view.removeFromSuperview()
+            self.controller?.errorAlertView = nil
+            self.controller?.errorAlertViewTopConstraint = nil
+            self.controller?.errorAlertViewBottomConstraint = nil
+        }
     }
     
 }

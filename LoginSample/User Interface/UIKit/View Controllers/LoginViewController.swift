@@ -14,6 +14,10 @@ final class LoginViewController: UIViewController {
     lazy var formStackView: UIStackView = .init()
     lazy var actionButton: UIButton = .init()
     
+    var errorAlertView: ErrorAlertView?
+    var errorAlertViewTopConstraint: NSLayoutConstraint?
+    var errorAlertViewBottomConstraint: NSLayoutConstraint?
+    
     private lazy var stateMachine: LoginViewControllerStateMachine = {
         .init(controller: self)
     }()
@@ -59,17 +63,21 @@ final class LoginViewController: UIViewController {
     // MARK: - Functions
     
     @objc func actionButtonTapped() {
+        guard errorAlertView == nil else { return }
+        
         guard
             let email = emailTextEntryView.textField.text,
             let password = passwordTextEntryView.textField.text
             else { return }
 
-        dataManager?.createLogin(email: email, password: password) { (result) in
+        dataManager?.createLogin(email: email, password: password) { [weak self] (result) in
+            guard let self = self else { return }
             switch result {
             case .success(let login):
                 self.delegate?.didLogin(login)
             case .failure(let error):
-                print(error.localizedDescription)
+                self.configurator.configureErrorAlertView(for: self, message: error.localizedDescription)
+                self.stateMachine.showErrorAlertView()
             }
         }
     }

@@ -15,21 +15,31 @@ final class LoginDataManager {
     // MARK: - Functions
     
     func createLogin(email: String, password: String, completion: @escaping (Result<UserLogin, Error>) -> Void) {
-        if isValidLogin(email: email, password: password) {
-            let login = UserLogin(email: email, password: password)
-            completion(.success(login))
+        let error: Error? = validateLogin(email: email, password: password)
+        
+        if let error = error {
+            completion(.failure(error))
         } else {
-            completion(.failure(LoginError.invalidEmailOrPassword))
+            let userLogin = UserLogin(email: email, password: password)
+            completion(.success(userLogin))
         }
     }
     
     // MARK: Private
     
-    private func isValidLogin(email: String, password: String) -> Bool {
+    private func validateLogin(email: String, password: String) -> LoginError? {
         let isValidEmail = validator.validate(email: email)
         let isValidPassword = validator.validate(password: password)
         
-        return isValidEmail && isValidPassword
+        if !isValidEmail && !isValidPassword {
+            return .invalidEmailAndPassword
+        } else if !isValidEmail {
+            return .invalidEmail
+        } else if !isValidPassword {
+            return .invalidPassword
+        } else {
+            return nil
+        }
     }
     
 }
