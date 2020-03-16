@@ -1,6 +1,5 @@
 import UIKit
 
-
 extension UIColor {
     
     static var primaryBackgroundColor: UIColor {
