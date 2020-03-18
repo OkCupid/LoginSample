@@ -5,7 +5,6 @@ final class LoginContainerViewController: UIViewController {
     
     // MARK: - Properties
     
-    private let dataManager: LoginDataManager = .init()
     private weak var delegate: LoginViewDelegate?
     
     // MARK: - Lifecycle
@@ -38,10 +37,10 @@ final class LoginContainerViewController: UIViewController {
     
     private func addChildViewController() {
         if #available(iOS 13, *) {
-            let loginView = LoginView(dataManager: dataManager, delegate: delegate)
+            let loginView = LoginView(delegate: delegate)
             add(UIHostingController<LoginView>(rootView: loginView), frame: view.frame)
         } else {
-            add(LoginViewController(dataManager: dataManager, delegate: delegate), frame: view.frame)
+            add(LoginViewController(delegate: delegate), frame: view.frame)
         }
     }
 }

@@ -3,7 +3,7 @@ import UIKit
 final class LoginViewController: UIViewController {
     
     private let viewModel: LoginViewModel
-    private weak var dataManager: LoginDataManager?
+    private let dataManager: LoginDataManager
     private weak var delegate: LoginViewDelegate?
     private let configurator: LoginViewControllerConfigurator = .init()
     
@@ -37,7 +37,7 @@ final class LoginViewController: UIViewController {
     // MARK: - Lifecycle
 
     init(viewModel: LoginViewModel = LoginViewModelFactory.create(),
-         dataManager: LoginDataManager?,
+         dataManager: LoginDataManager = .init(),
          delegate: LoginViewDelegate?) {
         
         self.viewModel = viewModel
@@ -70,7 +70,7 @@ final class LoginViewController: UIViewController {
             let password = passwordTextEntryView.textField.text
             else { return }
 
-        dataManager?.createLogin(email: email, password: password) { [weak self] (result) in
+        dataManager.createLogin(email: email, password: password) { [weak self] (result) in
             guard let self = self else { return }
             switch result {
             case .success(let login):

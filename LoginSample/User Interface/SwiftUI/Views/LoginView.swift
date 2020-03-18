@@ -6,7 +6,7 @@ struct LoginView: View {
     // MARK: - Properties
     
     private let viewModel: LoginViewModel
-    private weak var dataManager: LoginDataManager?
+    private let dataManager: LoginDataManager
     private weak var delegate: LoginViewDelegate?
     
     @ObservedObject private var emailEntry: UserLoginEntry = .init()
@@ -61,7 +61,7 @@ struct LoginView: View {
     // MARK: - Lifecycle
     
     init(viewModel: LoginViewModel = LoginViewModelFactory.create(),
-         dataManager: LoginDataManager?,
+         dataManager: LoginDataManager = .init(),
          delegate: LoginViewDelegate?) {
         
         self.viewModel = viewModel
@@ -77,9 +77,9 @@ struct LoginView: View {
     }
     
     private func buttonTapped() {
-        dataManager?.createLogin(email: emailEntry.value,
-                                 password: passwordEntry.value,
-                                 completion: { (result) in
+        dataManager.createLogin(email: emailEntry.value,
+                                password: passwordEntry.value,
+                                completion: { (result) in
             switch result {
             case .success(let login):
                 self.delegate?.didLogin(login)
@@ -104,6 +104,6 @@ struct LoginView: View {
 @available(iOS 13.0.0, *)
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(dataManager: nil, delegate: nil)
+        LoginView(delegate: nil)
     }
 }

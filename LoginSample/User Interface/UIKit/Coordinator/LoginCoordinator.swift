@@ -4,7 +4,7 @@ final class LoginCoordinator: NSObject, Coordinator {
 
     // MARK: - Properties
 
-    private let window: UIWindow
+    private weak var window: UIWindow?
 
     var rootViewController: UINavigationController
 
@@ -21,8 +21,8 @@ final class LoginCoordinator: NSObject, Coordinator {
     func start() {
         let loginContainerViewController = makeLoginContainerViewController()
         rootViewController.viewControllers = [loginContainerViewController]
-        window.rootViewController = rootViewController
-        window.makeKeyAndVisible()
+        window?.rootViewController = rootViewController
+        window?.makeKeyAndVisible()
     }
     
     // MARK: Private
