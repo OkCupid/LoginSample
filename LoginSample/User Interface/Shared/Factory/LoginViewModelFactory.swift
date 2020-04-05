@@ -25,7 +25,7 @@ struct LoginViewModelFactory {
                                 disabledBackgroundColor: UIColor.tertiaryButtonBackgroundColor,
                                 height: 44,
                                 highlightedBackgroundColor: UIColor.secondaryButtonBackgroundColor,
-                                title: NSLocalizedString("LOGIN", comment: "Login Form - CTA Title Text"),
+                                title: NSLocalizedString("LOG IN", comment: "Login Form - CTA Title Text"),
                                 titleColor: UIColor.primaryButtonTextColor,
                                 titleFont: font)
     }
@@ -81,7 +81,9 @@ struct LoginViewModelFactory {
         
         let textFieldFont: FontModel = .init(pointSize: 16, weight: .regular)
         
-        let textFieldModel: LoginTextEntryTextFieldModel = .init(backgroundColor: UIColor.secondaryBackgroundColor,
+        let textFieldModel: LoginTextEntryTextFieldModel = .init(autocapitalizationType: .none,
+                                                                 autocorrectionType: .no,
+                                                                 backgroundColor: UIColor.secondaryBackgroundColor,
                                                                  cornerRadius: 4,
                                                                  font: textFieldFont,
                                                                  padding: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10),

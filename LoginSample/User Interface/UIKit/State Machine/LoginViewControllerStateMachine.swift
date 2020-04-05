@@ -5,11 +5,13 @@ final class LoginViewControllerStateMachine: NSObject {
     // MARK: - Properties
     
     private weak var controller: LoginViewController?
+    private let notificationCenter: NotificationCenter
     
     // MARK: - Lifecycle
     
-    init(controller: LoginViewController) {
+    init(controller: LoginViewController, notificationCenter: NotificationCenter = .default) {
         self.controller = controller
+        self.notificationCenter = notificationCenter
         
         super.init()
     }
@@ -17,14 +19,10 @@ final class LoginViewControllerStateMachine: NSObject {
     // MARK: - Functions
     
     func setup() {
+        addKeyboardObservers()
         assignTextFieldDelegates()
         trackTextFieldsEditingChangedEvent()
         updateActionButtonState()
-    }
-    
-    func updateActionButtonState() {
-        let shouldEnable = shouldEnableActionButton()
-        controller?.actionButton.isEnabled = shouldEnable ? true : false
     }
     
     func showErrorAlertView() {
@@ -42,6 +40,26 @@ final class LoginViewControllerStateMachine: NSObject {
     }
     
     // MARK: Private
+    
+    private func addKeyboardObservers() {
+        notificationCenter.addObserver(self,
+                                       selector: #selector(adjustForKeyboard),
+                                       name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        notificationCenter.addObserver(self,
+                                       selector: #selector(adjustForKeyboard),
+                                       name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
+    
+    @objc private func adjustForKeyboard(notification: Notification) {
+        if notification.name == UIResponder.keyboardWillHideNotification {
+            controller?.scrollView.contentOffset = .zero
+        } else {
+            let textFieldMaxY = UIResponder.currentFirstResponder?.globalFrame?.maxY ?? 0
+            let keyboardMinY = UIScreen.main.bounds.height - notification.keyboardHeight
+            controller?.scrollView.contentOffset.y = max(0, textFieldMaxY - keyboardMinY)
+        }
+    }
     
     private func assignTextFieldDelegates() {
         controller?.emailTextEntryView.textField.delegate = self
@@ -64,9 +82,13 @@ final class LoginViewControllerStateMachine: NSObject {
         textField?.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
     }
     
+    private func updateActionButtonState() {
+        let shouldEnable = shouldEnableActionButton()
+        controller?.actionButton.isEnabled = shouldEnable ? true : false
+    }
+    
     @objc private func textFieldDidChange() {
         updateActionButtonState()
-        removeErrorAlertViewIfNeeded()
     }
     
     private func removeErrorAlertViewIfNeeded() {
@@ -91,6 +113,12 @@ final class LoginViewControllerStateMachine: NSObject {
 }
 
 extension LoginViewControllerStateMachine: UITextFieldDelegate {
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        removeErrorAlertViewIfNeeded()
+        
+        return true
+    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()

@@ -19,10 +19,15 @@ struct LoginView: View {
         emailEntry.value.isEmpty || passwordEntry.value.isEmpty
     }
     
+    @State private var showDetail = false
+    
     var body: some View {
         GeometryReader { geometryProxy in 
             ZStack(alignment: .top) {
-                Color(self.viewModel.backgroundColor)
+                Color(self.viewModel.backgroundColor).zIndex(0)
+                    .onTapGesture {
+                        self.endEditing()
+                    }
                 
                 LoginVStack(viewModel: self.viewModel.contentStackModel) {
                     LoginImage(viewModel: self.viewModel.imageModel)
@@ -43,16 +48,21 @@ struct LoginView: View {
                                 isDisabled: self.isButtonDisabled,
                                 viewModel: self.viewModel.buttonModel,
                                 width: self.getContentWidth(proxy: geometryProxy))
+                        
                 }
                 .modifier(LoginVStackLayout(alignment: .topLeading,
-                                             size: geometryProxy.size,
-                                             viewModel: self.viewModel.contentStackModel))
+                                            size: geometryProxy.size,
+                                            viewModel: self.viewModel.contentStackModel))
+                .modifier(KeyboardAdaptive())
+                .zIndex(1)
                 
-                ErrorAlert(message: self.$errorMessage,
-                           width: geometryProxy.size.width)
-                     .modifier(ErrorAlertLayoutAnimation(message: self.$errorMessage,
-                                                         showError: self.$showError,
-                                                         width: geometryProxy.size.width))
+                if self.showError {
+                    ErrorAlert(message: self.errorMessage, width: geometryProxy.size.width)
+                        .modifier(ErrorAlertLayoutAnimation(message: self.errorMessage,
+                                                            width: geometryProxy.size.width))
+                        .zIndex(2)
+
+                }
             }
         }
         .edgesIgnoringSafeArea(.all)
@@ -72,11 +82,22 @@ struct LoginView: View {
     // MARK: - Functions
     
     private func textEntryTextFieldTapped() {
-        showError = false
+        guard showError else { return }
+        
+        withAnimation {
+            self.showError = false
+        }
+        
         errorMessage = ""
     }
     
+    private func endEditing() {
+        UIApplication.shared.endEditing()
+    }
+    
     private func buttonTapped() {
+        guard !showError else { return }
+        
         dataManager.createLogin(email: emailEntry.value,
                                 password: passwordEntry.value,
                                 completion: { (result) in
@@ -85,7 +106,9 @@ struct LoginView: View {
                 self.delegate?.didLogin(login)
             case .failure(let error):
                 self.errorMessage = error.localizedDescription
-                self.showError = true
+                withAnimation {
+                    self.showError = true
+                }
             }
         })
     }

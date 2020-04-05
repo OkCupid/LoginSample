@@ -36,7 +36,7 @@ final class LoginCoordinator: NSObject, Coordinator {
 extension LoginCoordinator: LoginViewDelegate {
     
     func didLogin(_ login: UserLogin) {
-        print("login completed")
+        print("\(login.email) logged in.")
     }
     
 }

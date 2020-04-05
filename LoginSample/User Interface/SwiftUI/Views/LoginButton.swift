@@ -15,6 +15,7 @@ struct LoginButton: View, UIFontWeightConvertible {
                               weight: convert(weight: self.viewModel.titleFont.weight) ?? .semibold))
         }
         .buttonStyle(LoginButtonStyle(isDisabled: isDisabled, viewModel: viewModel, width: width))
+        .disabled(isDisabled)
     }
 
 }

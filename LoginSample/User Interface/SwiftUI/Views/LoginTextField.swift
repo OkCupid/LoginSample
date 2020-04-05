@@ -1,7 +1,7 @@
 import SwiftUI
 
 @available(iOS 13.0.0, *)
-struct LoginTextField: View, UIFontWeightConvertible {
+struct LoginTextField: View, UIFontWeightConvertible, UITextAutocorrectionTypeConvertible {
     
     @Binding var value: String
     
@@ -11,30 +11,31 @@ struct LoginTextField: View, UIFontWeightConvertible {
     
     private var textField: some View {
         if viewModel.isSecureTextEntry {
-            return AnyView(SecureField(self.viewModel.placeholderText,
-                                       text: $value).onTapGesture(perform: textFieldTapped))
+            return AnyView(SecureField(viewModel.placeholderText, text: $value))
         } else {
-            return AnyView(TextField(self.viewModel.placeholderText,
-                                     text: $value).onTapGesture(perform: textFieldTapped))
+            return AnyView(TextField(viewModel.placeholderText, text: $value))
         }
     }
     
     var body: some View {
         textField
+            .autocapitalization(viewModel.autocapitalizationType)
+            .disableAutocorrection(!(convert(autocorrectionType: viewModel.autocorrectionType) ?? false))
             .font(.system(size: viewModel.font.pointSize,
                           weight: convert(weight: viewModel.font.weight) ?? .regular))
-            .padding(EdgeInsets(top: self.viewModel.padding.top,
-                                leading: self.viewModel.padding.left,
-                                bottom: self.viewModel.padding.bottom,
-                                trailing: self.viewModel.padding.right))
+            .padding(EdgeInsets(top: viewModel.padding.top,
+                                leading: viewModel.padding.left,
+                                bottom: viewModel.padding.bottom,
+                                trailing: viewModel.padding.right))
 
-            .background(Color(self.viewModel.backgroundColor))
-            .cornerRadius(self.viewModel.cornerRadius)
-            .shadow(color: Color(self.viewModel.shadowModel.color.withAlphaComponent(self.viewModel.shadowModel.opacity)),
-                    radius: self.viewModel.shadowModel.radius,
-                    x: self.viewModel.shadowModel.offset.width,
-                    y: self.viewModel.shadowModel.offset.height)
+            .background(Color(viewModel.backgroundColor))
+            .cornerRadius(viewModel.cornerRadius)
+            .shadow(color: Color(viewModel.shadowModel.color.withAlphaComponent(viewModel.shadowModel.opacity)),
+                    radius: viewModel.shadowModel.radius,
+                    x: viewModel.shadowModel.offset.width,
+                    y: viewModel.shadowModel.offset.height)
             .frame(width: width)
+            .onTapGesture(perform: textFieldTapped)
     }
-
+    
 }

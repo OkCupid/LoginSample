@@ -31,6 +31,8 @@ struct LoginTextEntryViewConfigurator {
 
     private func configureTextField(view: LoginTextEntryView, viewModel: LoginTextEntryViewModel) {
         view.textField.padding = viewModel.textFieldModel.padding
+        view.textField.autocapitalizationType = viewModel.textFieldModel.autocapitalizationType
+        view.textField.autocorrectionType = viewModel.textFieldModel.autocorrectionType
         view.textField.backgroundColor = viewModel.textFieldModel.backgroundColor
         view.textField.font = UIFont.systemFont(ofSize: viewModel.textFieldModel.font.pointSize,
                                                 weight: viewModel.textFieldModel.font.weight)

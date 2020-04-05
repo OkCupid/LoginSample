@@ -3,7 +3,7 @@ import SwiftUI
 @available(iOS 13.0.0, *)
 struct ErrorAlert: UIViewRepresentable {
     
-    @Binding var message: String
+    let message: String
     let width: CGFloat
     
     func makeUIView(context: Context) -> ErrorAlertView {
@@ -11,11 +11,7 @@ struct ErrorAlert: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: ErrorAlertView, context: Context) {
-        uiView.message = message
-    }
-    
-    static func getHeight(text: String, width: CGFloat) -> CGFloat {
-        ErrorAlertView.getHeight(text: text, width: width)
+        // not in use
     }
     
 }

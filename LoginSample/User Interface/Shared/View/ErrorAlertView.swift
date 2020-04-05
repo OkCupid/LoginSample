@@ -23,12 +23,6 @@ final class ErrorAlertView: UIView {
         return label
     }()
     
-    var message: String? {
-        didSet {
-            label.text = message
-        }
-    }
-    
     // MARK: - Lifecycle
 
     init(message: String, width: CGFloat) {
@@ -36,7 +30,6 @@ final class ErrorAlertView: UIView {
         
         configureView()
         configureLabelConstraints(width: width)
-        self.message = message
         label.text = message
     }
 

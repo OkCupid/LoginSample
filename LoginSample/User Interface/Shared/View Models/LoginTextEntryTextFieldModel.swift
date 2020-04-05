@@ -1,6 +1,8 @@
 import UIKit
 
 struct LoginTextEntryTextFieldModel {
+    let autocapitalizationType: UITextAutocapitalizationType
+    let autocorrectionType: UITextAutocorrectionType
     let backgroundColor: UIColor
     let cornerRadius: CGFloat
     let font: FontModel

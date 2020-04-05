@@ -117,6 +117,7 @@ struct LoginViewControllerConfigurator {
         controller.actionButton.layer.cornerRadius = viewModel.buttonModel.cornerRadius
         controller.actionButton.clipsToBounds = true
         controller.actionButton.translatesAutoresizingMaskIntoConstraints = false
+        
         controller.actionButton.addTarget(controller, action: #selector(controller.actionButtonTapped), for: .touchUpInside)
     }
     

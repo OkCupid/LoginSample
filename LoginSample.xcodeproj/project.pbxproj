@@ -38,6 +38,13 @@
 		5D1781D82418424500E5AB13 /* LoginViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1781D72418424500E5AB13 /* LoginViewModelFactory.swift */; };
 		5D1781DA2419102900E5AB13 /* LoginTextEntryViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1781D92419102900E5AB13 /* LoginTextEntryViewConfigurator.swift */; };
 		5D1781DF2419149100E5AB13 /* ShadowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1781DE2419149100E5AB13 /* ShadowViewModel.swift */; };
+		5D4B4C7224253C79002F61EC /* AnyTransition+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4B4C7124253C79002F61EC /* AnyTransition+Extension.swift */; };
+		5D4B54D92434F0C9002F61EC /* Publishers+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4B54D82434F0C9002F61EC /* Publishers+Extensions.swift */; };
+		5D4B54DB2434F1C3002F61EC /* Notification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4B54DA2434F1C3002F61EC /* Notification+Extension.swift */; };
+		5D4B54DD2434F359002F61EC /* UIResponder+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4B54DC2434F359002F61EC /* UIResponder+Extensions.swift */; };
+		5D4B54DF2434F5CE002F61EC /* KeyboardAdaptive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4B54DE2434F5CE002F61EC /* KeyboardAdaptive.swift */; };
+		5D4B54E124350F68002F61EC /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4B54E024350F68002F61EC /* UIApplication+Extension.swift */; };
+		5D4B556524361CBA002F61EC /* UITextAutocorrectionTypeConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4B556424361CBA002F61EC /* UITextAutocorrectionTypeConvertible.swift */; };
 		5D8287B1241BF13700875FC9 /* UIFontWeightConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8287B0241BF13700875FC9 /* UIFontWeightConvertible.swift */; };
 		5D8287B4241BF26000875FC9 /* LoginVStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8287B3241BF26000875FC9 /* LoginVStack.swift */; };
 		5D8287B9241BFA3600875FC9 /* UIStackViewAlignmentConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8287B8241BFA3600875FC9 /* UIStackViewAlignmentConvertible.swift */; };
@@ -103,6 +110,13 @@
 		5D1781D72418424500E5AB13 /* LoginViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelFactory.swift; sourceTree = "<group>"; };
 		5D1781D92419102900E5AB13 /* LoginTextEntryViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextEntryViewConfigurator.swift; sourceTree = "<group>"; };
 		5D1781DE2419149100E5AB13 /* ShadowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowViewModel.swift; sourceTree = "<group>"; };
+		5D4B4C7124253C79002F61EC /* AnyTransition+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnyTransition+Extension.swift"; sourceTree = "<group>"; };
+		5D4B54D82434F0C9002F61EC /* Publishers+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publishers+Extensions.swift"; sourceTree = "<group>"; };
+		5D4B54DA2434F1C3002F61EC /* Notification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extension.swift"; sourceTree = "<group>"; };
+		5D4B54DC2434F359002F61EC /* UIResponder+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+Extensions.swift"; sourceTree = "<group>"; };
+		5D4B54DE2434F5CE002F61EC /* KeyboardAdaptive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAdaptive.swift; sourceTree = "<group>"; };
+		5D4B54E024350F68002F61EC /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		5D4B556424361CBA002F61EC /* UITextAutocorrectionTypeConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextAutocorrectionTypeConvertible.swift; sourceTree = "<group>"; };
 		5D8287B0241BF13700875FC9 /* UIFontWeightConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontWeightConvertible.swift; sourceTree = "<group>"; };
 		5D8287B3241BF26000875FC9 /* LoginVStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVStack.swift; sourceTree = "<group>"; };
 		5D8287B8241BFA3600875FC9 /* UIStackViewAlignmentConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackViewAlignmentConvertible.swift; sourceTree = "<group>"; };
@@ -269,8 +283,11 @@
 		5D17808F2416DE4200E5AB13 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				5D4B54DA2434F1C3002F61EC /* Notification+Extension.swift */,
+				5D4B54E024350F68002F61EC /* UIApplication+Extension.swift */,
 				5D1781B62417DF9A00E5AB13 /* UIColor+Extensions.swift */,
 				5D1781B82417E67700E5AB13 /* UIImage+Extension.swift */,
+				5D4B54DC2434F359002F61EC /* UIResponder+Extensions.swift */,
 				5D1780902416DE7500E5AB13 /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
@@ -302,6 +319,15 @@
 			path = Factory;
 			sourceTree = "<group>";
 		};
+		5D4B4C7024253C4D002F61EC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5D4B4C7124253C79002F61EC /* AnyTransition+Extension.swift */,
+				5D4B54D82434F0C9002F61EC /* Publishers+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		5D8287B2241BF23C00875FC9 /* Custom Container */ = {
 			isa = PBXGroup;
 			children = (
@@ -314,6 +340,7 @@
 			isa = PBXGroup;
 			children = (
 				5D828856241FACFA00875FC9 /* ErrorAlertLayoutAnimation.swift */,
+				5D4B54DE2434F5CE002F61EC /* KeyboardAdaptive.swift */,
 				5D8287BA241BFD0E00875FC9 /* LoginVStackLayout.swift */,
 			);
 			path = Modifiers;
@@ -346,6 +373,7 @@
 			children = (
 				5D82885F241FAE1500875FC9 /* Converters */,
 				5D8287B2241BF23C00875FC9 /* Custom Container */,
+				5D4B4C7024253C4D002F61EC /* Extensions */,
 				5D828845241C36AA00875FC9 /* Model */,
 				5D8287B5241BF42E00875FC9 /* Modifiers */,
 				5D828860241FAE7F00875FC9 /* Style */,
@@ -416,6 +444,7 @@
 			children = (
 				5D8287B0241BF13700875FC9 /* UIFontWeightConvertible.swift */,
 				5D8287B8241BFA3600875FC9 /* UIStackViewAlignmentConvertible.swift */,
+				5D4B556424361CBA002F61EC /* UITextAutocorrectionTypeConvertible.swift */,
 				5D82884E241D7F0500875FC9 /* UIViewContentModeConvertible.swift */,
 			);
 			path = Converters;
@@ -538,6 +567,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D4B54DF2434F5CE002F61EC /* KeyboardAdaptive.swift in Sources */,
 				5D1781372417CE1A00E5AB13 /* LoginTextEntryView.swift in Sources */,
 				5D03FA632419372C00767BD6 /* LoginError.swift in Sources */,
 				5D8287BB241BFD0E00875FC9 /* LoginVStackLayout.swift in Sources */,
@@ -556,30 +586,36 @@
 				5D8287B1241BF13700875FC9 /* UIFontWeightConvertible.swift in Sources */,
 				5D828853241E973100875FC9 /* DeviceInfo.swift in Sources */,
 				5D17805B2416CDBC00E5AB13 /* LoginCoordinator.swift in Sources */,
+				5D4B54E124350F68002F61EC /* UIApplication+Extension.swift in Sources */,
 				5D8287B9241BFA3600875FC9 /* UIStackViewAlignmentConvertible.swift in Sources */,
 				5D1780572416CB8600E5AB13 /* Coordinator.swift in Sources */,
 				5D828847241C36E100875FC9 /* UserLoginEntry.swift in Sources */,
 				5D1780912416DE7500E5AB13 /* UIViewController+Extensions.swift in Sources */,
 				5D1781DF2419149100E5AB13 /* ShadowViewModel.swift in Sources */,
+				5D4B54DD2434F359002F61EC /* UIResponder+Extensions.swift in Sources */,
 				5D8287BE241BFF8E00875FC9 /* LoginText.swift in Sources */,
 				5D1781BD2418068D00E5AB13 /* PaddedTextField.swift in Sources */,
 				5D17805E2416CE4900E5AB13 /* LoginContainerViewController.swift in Sources */,
 				5D828851241D8C1A00875FC9 /* ErrorAlertView.swift in Sources */,
 				5D03FA652419386200767BD6 /* UserLogin.swift in Sources */,
 				5D177FB52416C3B800E5AB13 /* AppDelegate.swift in Sources */,
+				5D4B54D92434F0C9002F61EC /* Publishers+Extensions.swift in Sources */,
 				5D03FA6B241938C100767BD6 /* LoginValidator.swift in Sources */,
 				5D1781D82418424500E5AB13 /* LoginViewModelFactory.swift in Sources */,
 				5D828855241FACC500875FC9 /* ErrorAlert.swift in Sources */,
 				5D1781C42418307F00E5AB13 /* LoginTextEntryTextFieldModel.swift in Sources */,
 				5D03FAE82419704700767BD6 /* LoginViewDelegate.swift in Sources */,
 				5D1781CE2418337700E5AB13 /* LoginTextModel.swift in Sources */,
+				5D4B556524361CBA002F61EC /* UITextAutocorrectionTypeConvertible.swift in Sources */,
 				5D82884F241D7F0500875FC9 /* UIViewContentModeConvertible.swift in Sources */,
 				5D1781B92417E67700E5AB13 /* UIImage+Extension.swift in Sources */,
+				5D4B54DB2434F1C3002F61EC /* Notification+Extension.swift in Sources */,
 				5D1781CA2418337400E5AB13 /* LoginStackModel.swift in Sources */,
 				5D1781B72417DF9A00E5AB13 /* UIColor+Extensions.swift in Sources */,
 				5D1781D22418337B00E5AB13 /* LoginButtonModel.swift in Sources */,
 				5D82884D241D674E00875FC9 /* LoginButtonStyle.swift in Sources */,
 				5D1781CC2418337600E5AB13 /* LoginImageModel.swift in Sources */,
+				5D4B4C7224253C79002F61EC /* AnyTransition+Extension.swift in Sources */,
 				5D1781C02418302D00E5AB13 /* LoginTextEntryViewModel.swift in Sources */,
 				5D03FA682419388B00767BD6 /* LoginDataManager.swift in Sources */,
 				5D8287C2241C000500875FC9 /* LoginImage.swift in Sources */,
