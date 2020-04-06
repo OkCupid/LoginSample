@@ -11,9 +11,10 @@ struct KeyboardAdaptive: ViewModifier {
             content
                 .offset(x: 0, y: -self.yOffset)
                 .onReceive(Publishers.keyboardHeight) { keyboardHeight in
-                    let keyboardTop = geometry.frame(in: .global).height - keyboardHeight
-                    let focusedTextInputBottom = UIResponder.currentFirstResponder?.globalFrame?.maxY ?? 0
-                    self.yOffset = max(0, focusedTextInputBottom - keyboardTop - geometry.safeAreaInsets.bottom)
+                    let keyboardMinY = geometry.frame(in: .global).height - keyboardHeight
+                    let firstResponderViewMaxY = UIResponder.currentFirstResponder?.globalFrame?.maxY ?? 0
+                    let firstResponderBottomPadding: CGFloat = 20
+                    self.yOffset = max(0, (firstResponderViewMaxY + firstResponderBottomPadding) - keyboardMinY - geometry.safeAreaInsets.bottom)
                 }
                 .animation(.easeOut(duration: 0.16))
         }

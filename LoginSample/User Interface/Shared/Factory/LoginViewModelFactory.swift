@@ -69,7 +69,6 @@ struct LoginViewModelFactory {
         return LoginTextModel(font: font,
                               numberOfLines: 2,
                               text: NSLocalizedString("Enter email\nand password", comment: "Login Form - Title Text"),
-                              textAlignment: .left,
                               textColor: .black)
     }
     
@@ -98,7 +97,6 @@ struct LoginViewModelFactory {
         let titleModel: LoginTextModel = .init(font: titleFont,
                                                numberOfLines: 1,
                                                text: titleText,
-                                               textAlignment: .left,
                                                textColor: UIColor.primaryTextColor)
         
         let stackModel: LoginStackModel = .init(alignment: .leading,

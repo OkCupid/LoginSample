@@ -25,7 +25,6 @@ struct LoginTextEntryViewConfigurator {
                                                  weight: viewModel.titleModel.font.weight)
         view.titleLabel.numberOfLines = viewModel.titleModel.numberOfLines
         view.titleLabel.text = viewModel.titleModel.text
-        view.titleLabel.textAlignment = viewModel.titleModel.textAlignment
         view.titleLabel.textColor = viewModel.titleModel.textColor
     }
 

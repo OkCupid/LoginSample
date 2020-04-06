@@ -56,8 +56,9 @@ final class LoginViewControllerStateMachine: NSObject {
             controller?.scrollView.contentOffset = .zero
         } else {
             let textFieldMaxY = UIResponder.currentFirstResponder?.globalFrame?.maxY ?? 0
+            let textFieldBottomPadding: CGFloat = 15
             let keyboardMinY = UIScreen.main.bounds.height - notification.keyboardHeight
-            controller?.scrollView.contentOffset.y = max(0, textFieldMaxY - keyboardMinY)
+            controller?.scrollView.contentOffset.y = max(0, (textFieldMaxY + textFieldBottomPadding) - keyboardMinY)
         }
     }
     
