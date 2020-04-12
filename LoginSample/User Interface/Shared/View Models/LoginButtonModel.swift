@@ -8,5 +8,5 @@ struct LoginButtonModel {
     let highlightedBackgroundColor: UIColor
     let title: String
     let titleColor: UIColor
-    let titleFont: FontModel
+    let titleFont: UIFont
 }

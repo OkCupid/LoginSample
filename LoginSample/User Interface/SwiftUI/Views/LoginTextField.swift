@@ -1,7 +1,7 @@
 import SwiftUI
 
 @available(iOS 13.0.0, *)
-struct LoginTextField: View, UIFontWeightConvertible, UITextAutocorrectionTypeConvertible {
+struct LoginTextField: View, UITextAutocorrectionTypeConvertible {
     
     @Binding var value: String
     
@@ -21,8 +21,7 @@ struct LoginTextField: View, UIFontWeightConvertible, UITextAutocorrectionTypeCo
         textField
             .autocapitalization(viewModel.autocapitalizationType)
             .disableAutocorrection(!(convert(autocorrectionType: viewModel.autocorrectionType) ?? false))
-            .font(.system(size: viewModel.font.pointSize,
-                          weight: convert(weight: viewModel.font.weight) ?? .regular))
+            .font(Font(viewModel.font as CTFont))
             .padding(EdgeInsets(top: viewModel.padding.top,
                                 leading: viewModel.padding.left,
                                 bottom: viewModel.padding.bottom,

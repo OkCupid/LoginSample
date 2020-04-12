@@ -1,14 +1,15 @@
 import SwiftUI
 
 @available(iOS 13.0.0, *)
-struct LoginText: View, UIFontWeightConvertible {
+struct LoginText: View {
     
     let viewModel: LoginTextModel
-
+    
     var body: some View {
         Text(viewModel.text)
-            .font(.system(size: viewModel.font.pointSize,
-                          weight: convert(weight: viewModel.font.weight) ?? .regular))
+            .font(Font(viewModel.font as CTFont))
+            .lineLimit(viewModel.numberOfLines)
+            .foregroundColor(Color(viewModel.textColor))
     }
 
 }

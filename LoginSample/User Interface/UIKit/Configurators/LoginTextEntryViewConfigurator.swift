@@ -21,8 +21,7 @@ struct LoginTextEntryViewConfigurator {
     }
 
     private func configureTitleLabel(view: LoginTextEntryView, viewModel: LoginTextEntryViewModel) {
-        view.titleLabel.font = UIFont.systemFont(ofSize: viewModel.titleModel.font.pointSize,
-                                                 weight: viewModel.titleModel.font.weight)
+        view.titleLabel.font = viewModel.titleModel.font
         view.titleLabel.numberOfLines = viewModel.titleModel.numberOfLines
         view.titleLabel.text = viewModel.titleModel.text
         view.titleLabel.textColor = viewModel.titleModel.textColor
@@ -33,8 +32,7 @@ struct LoginTextEntryViewConfigurator {
         view.textField.autocapitalizationType = viewModel.textFieldModel.autocapitalizationType
         view.textField.autocorrectionType = viewModel.textFieldModel.autocorrectionType
         view.textField.backgroundColor = viewModel.textFieldModel.backgroundColor
-        view.textField.font = UIFont.systemFont(ofSize: viewModel.textFieldModel.font.pointSize,
-                                                weight: viewModel.textFieldModel.font.weight)
+        view.textField.font = viewModel.textFieldModel.font
         view.textField.isSecureTextEntry = viewModel.textFieldModel.isSecureTextEntry
 
         let placeholderText: String = viewModel.textFieldModel.placeholderText

@@ -84,8 +84,7 @@ struct LoginViewControllerConfigurator {
     }
 
     private func configureTitleLabel(for controller: LoginViewController, viewModel: LoginViewModel) {
-        controller.titleLabel.font = UIFont.systemFont(ofSize: viewModel.titleModel.font.pointSize,
-                                                       weight: viewModel.titleModel.font.weight)
+        controller.titleLabel.font = viewModel.titleModel.font
         controller.titleLabel.numberOfLines = viewModel.titleModel.numberOfLines
         controller.titleLabel.text = viewModel.titleModel.text
         controller.titleLabel.textColor = viewModel.titleModel.textColor
@@ -112,8 +111,7 @@ struct LoginViewControllerConfigurator {
         
         controller.actionButton.setTitle(viewModel.buttonModel.title, for: .normal)
         controller.actionButton.setTitleColor(viewModel.buttonModel.titleColor, for: .normal)
-        controller.actionButton.titleLabel?.font = UIFont.systemFont(ofSize: viewModel.buttonModel.titleFont.pointSize,
-                                                                     weight: viewModel.buttonModel.titleFont.weight)
+        controller.actionButton.titleLabel?.font = viewModel.buttonModel.titleFont
         controller.actionButton.layer.cornerRadius = viewModel.buttonModel.cornerRadius
         controller.actionButton.clipsToBounds = true
         controller.actionButton.translatesAutoresizingMaskIntoConstraints = false

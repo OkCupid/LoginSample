@@ -45,13 +45,11 @@
 		5D4B54DF2434F5CE002F61EC /* KeyboardAdaptive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4B54DE2434F5CE002F61EC /* KeyboardAdaptive.swift */; };
 		5D4B54E124350F68002F61EC /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4B54E024350F68002F61EC /* UIApplication+Extension.swift */; };
 		5D4B556524361CBA002F61EC /* UITextAutocorrectionTypeConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4B556424361CBA002F61EC /* UITextAutocorrectionTypeConvertible.swift */; };
-		5D8287B1241BF13700875FC9 /* UIFontWeightConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8287B0241BF13700875FC9 /* UIFontWeightConvertible.swift */; };
 		5D8287B4241BF26000875FC9 /* LoginVStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8287B3241BF26000875FC9 /* LoginVStack.swift */; };
 		5D8287B9241BFA3600875FC9 /* UIStackViewAlignmentConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8287B8241BFA3600875FC9 /* UIStackViewAlignmentConvertible.swift */; };
 		5D8287BB241BFD0E00875FC9 /* LoginVStackLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8287BA241BFD0E00875FC9 /* LoginVStackLayout.swift */; };
 		5D8287BE241BFF8E00875FC9 /* LoginText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8287BD241BFF8E00875FC9 /* LoginText.swift */; };
 		5D8287C2241C000500875FC9 /* LoginImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8287C1241C000500875FC9 /* LoginImage.swift */; };
-		5D8287C4241C089200875FC9 /* FontModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8287C3241C089200875FC9 /* FontModel.swift */; };
 		5D828842241C35E100875FC9 /* LoginTextEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D828841241C35E100875FC9 /* LoginTextEntry.swift */; };
 		5D828844241C365F00875FC9 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D828843241C365F00875FC9 /* LoginTextField.swift */; };
 		5D828847241C36E100875FC9 /* UserLoginEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D828846241C36E100875FC9 /* UserLoginEntry.swift */; };
@@ -117,13 +115,11 @@
 		5D4B54DE2434F5CE002F61EC /* KeyboardAdaptive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAdaptive.swift; sourceTree = "<group>"; };
 		5D4B54E024350F68002F61EC /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		5D4B556424361CBA002F61EC /* UITextAutocorrectionTypeConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextAutocorrectionTypeConvertible.swift; sourceTree = "<group>"; };
-		5D8287B0241BF13700875FC9 /* UIFontWeightConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontWeightConvertible.swift; sourceTree = "<group>"; };
 		5D8287B3241BF26000875FC9 /* LoginVStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVStack.swift; sourceTree = "<group>"; };
 		5D8287B8241BFA3600875FC9 /* UIStackViewAlignmentConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackViewAlignmentConvertible.swift; sourceTree = "<group>"; };
 		5D8287BA241BFD0E00875FC9 /* LoginVStackLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVStackLayout.swift; sourceTree = "<group>"; };
 		5D8287BD241BFF8E00875FC9 /* LoginText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginText.swift; sourceTree = "<group>"; };
 		5D8287C1241C000500875FC9 /* LoginImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginImage.swift; sourceTree = "<group>"; };
-		5D8287C3241C089200875FC9 /* FontModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontModel.swift; sourceTree = "<group>"; };
 		5D828841241C35E100875FC9 /* LoginTextEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextEntry.swift; sourceTree = "<group>"; };
 		5D828843241C365F00875FC9 /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 		5D828846241C36E100875FC9 /* UserLoginEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginEntry.swift; sourceTree = "<group>"; };
@@ -396,7 +392,6 @@
 		5D82885B241FAD6900875FC9 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
-				5D8287C3241C089200875FC9 /* FontModel.swift */,
 				5D1781D12418337B00E5AB13 /* LoginButtonModel.swift */,
 				5D1781CB2418337600E5AB13 /* LoginImageModel.swift */,
 				5D1781C32418307F00E5AB13 /* LoginTextEntryTextFieldModel.swift */,
@@ -442,7 +437,6 @@
 		5D82885F241FAE1500875FC9 /* Converters */ = {
 			isa = PBXGroup;
 			children = (
-				5D8287B0241BF13700875FC9 /* UIFontWeightConvertible.swift */,
 				5D8287B8241BFA3600875FC9 /* UIStackViewAlignmentConvertible.swift */,
 				5D4B556424361CBA002F61EC /* UITextAutocorrectionTypeConvertible.swift */,
 				5D82884E241D7F0500875FC9 /* UIViewContentModeConvertible.swift */,
@@ -576,14 +570,12 @@
 				5D1780962416DF7400E5AB13 /* LoginViewController.swift in Sources */,
 				5D828842241C35E100875FC9 /* LoginTextEntry.swift in Sources */,
 				5D1781D5241834F900E5AB13 /* LoginViewControllerConfigurator.swift in Sources */,
-				5D8287C4241C089200875FC9 /* FontModel.swift in Sources */,
 				5D1780942416DF3300E5AB13 /* LoginView.swift in Sources */,
 				5D828849241C4B6200875FC9 /* LoginButton.swift in Sources */,
 				5D8287B4241BF26000875FC9 /* LoginVStack.swift in Sources */,
 				5D1781C7241830CE00E5AB13 /* LoginViewModel.swift in Sources */,
 				5D03F9E824192B6100767BD6 /* LoginViewControllerStateMachine.swift in Sources */,
 				5D828857241FACFA00875FC9 /* ErrorAlertLayoutAnimation.swift in Sources */,
-				5D8287B1241BF13700875FC9 /* UIFontWeightConvertible.swift in Sources */,
 				5D828853241E973100875FC9 /* DeviceInfo.swift in Sources */,
 				5D17805B2416CDBC00E5AB13 /* LoginCoordinator.swift in Sources */,
 				5D4B54E124350F68002F61EC /* UIApplication+Extension.swift in Sources */,

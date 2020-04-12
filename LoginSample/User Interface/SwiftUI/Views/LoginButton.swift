@@ -1,7 +1,7 @@
 import SwiftUI
 
 @available(iOS 13.0.0, *)
-struct LoginButton: View, UIFontWeightConvertible {
+struct LoginButton: View {
     
     let action: () -> Void
     let isDisabled: Bool
@@ -11,8 +11,7 @@ struct LoginButton: View, UIFontWeightConvertible {
     var body: some View {
         Button(action: action) {
             Text(self.viewModel.title)
-                .font(.system(size: self.viewModel.titleFont.pointSize,
-                              weight: convert(weight: self.viewModel.titleFont.weight) ?? .semibold))
+                .font(Font(viewModel.titleFont as CTFont))
         }
         .buttonStyle(LoginButtonStyle(isDisabled: isDisabled, viewModel: viewModel, width: width))
         .disabled(isDisabled)

@@ -5,7 +5,7 @@ struct LoginTextEntryTextFieldModel {
     let autocorrectionType: UITextAutocorrectionType
     let backgroundColor: UIColor
     let cornerRadius: CGFloat
-    let font: FontModel
+    let font: UIFont
     let padding: UIEdgeInsets
     let placeholderText: String
     let placeholderTextColor: UIColor
