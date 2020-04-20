@@ -12,7 +12,7 @@ struct LoginTextEntry: View {
     let width: CGFloat
     
     var body: some View {
-        LoginVStack(viewModel: self.viewModel.stackModel) {
+        LoginVStack(viewModel: viewModel.stackModel) {
             LoginText(viewModel: self.viewModel.titleModel)
             LoginTextField(value: self.$userEntry.value,
                            textFieldTapped: self.textFieldTapped,

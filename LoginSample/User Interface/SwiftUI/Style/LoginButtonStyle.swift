@@ -13,10 +13,10 @@ struct LoginButtonStyle: ButtonStyle {
     
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
-            .foregroundColor(Color(self.viewModel.titleColor))
-            .frame(width: width, height: self.viewModel.height)
+            .foregroundColor(Color(viewModel.titleColor))
+            .frame(width: width, height: viewModel.height)
             .background(Color(getBackgroundColor(configuration: configuration)))
-            .cornerRadius(self.viewModel.cornerRadius)
+            .cornerRadius(viewModel.cornerRadius)
             .disabled(isDisabled)
     }
     

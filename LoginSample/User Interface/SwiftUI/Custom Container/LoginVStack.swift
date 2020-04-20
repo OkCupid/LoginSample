@@ -8,7 +8,7 @@ struct LoginVStack<Content: View>: View, UIStackViewAlignmentConvertible {
     
     var body: some View {
         VStack(alignment: convert(alignment: viewModel.alignment) ?? .leading, spacing: viewModel.spacing) {
-            self.content()
+            content()
         }
     }
     

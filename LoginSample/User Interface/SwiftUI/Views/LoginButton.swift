@@ -10,7 +10,7 @@ struct LoginButton: View {
     
     var body: some View {
         Button(action: action) {
-            Text(self.viewModel.title)
+            Text(viewModel.title)
                 .font(Font(viewModel.titleFont as CTFont))
         }
         .buttonStyle(LoginButtonStyle(isDisabled: isDisabled, viewModel: viewModel, width: width))
