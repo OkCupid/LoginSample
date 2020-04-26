@@ -1,5 +1,7 @@
 import UIKit
 
+// https://www.vadimbulavin.com/how-to-move-swiftui-view-when-keyboard-covers-text-field/
+
 extension Notification {
     
     var keyboardHeight: CGFloat {

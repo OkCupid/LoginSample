@@ -1,6 +1,8 @@
 import Combine
 import SwiftUI
 
+// https://www.vadimbulavin.com/how-to-move-swiftui-view-when-keyboard-covers-text-field/
+
 @available(iOS 13.0.0, *)
 struct KeyboardAdaptive: ViewModifier {
     
