@@ -5,6 +5,6 @@ Login Sample is a project exploring a gradual approach to integrating SwiftUI in
 There are two main goals for this project:
 
 1. Utilize shared abstractions and business logic when coding the user journey and building the user interface whether it's built using UIKit or SwiftUI. The main example of this is the `LoginViewModel` which provides most of the values and information needed to configure the login view.
-2. When rendered on screen, the login view should look nearly identical regardless of the iOS version and framework used to construct the user interface.
+2. When rendered on screen, the login view should look _nearly_ identical regardless of the iOS version and framework used to construct the user interface.
 
 ![](Screenshots/login-view-side-by-side.png)
